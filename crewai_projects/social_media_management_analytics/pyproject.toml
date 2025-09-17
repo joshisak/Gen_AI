@@ -1,0 +1,23 @@
+[project]
+name = "social_media_management_analytics_automation"
+version = "0.1.0"
+description = "social_media_management_analytics_automation using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.177.0,<1.0.0"
+]
+
+[project.scripts]
+social_media_management_analytics_automation = "social_media_management_analytics_automation.main:run"
+run_crew = "social_media_management_analytics_automation.main:run"
+train = "social_media_management_analytics_automation.main:train"
+replay = "social_media_management_analytics_automation.main:replay"
+test = "social_media_management_analytics_automation.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

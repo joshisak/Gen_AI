@@ -1,0 +1,52 @@
+---
+research_trending_topics_and_competitor_content:
+  description: Research and identify trending topics, popular hashtags, and competitor
+    content strategies in {industry}. Analyze what type of content is currently performing
+    well on social media platforms, identify emerging trends that {company_name} can
+    leverage, and gather insights about optimal posting strategies and content formats
+    that resonate with the target audience.
+  expected_output: 'A comprehensive research report in markdown format containing:
+    trending topics and hashtags in {industry}, competitor content analysis, platform-specific
+    best practices, content format recommendations, and strategic insights for social
+    media content creation.'
+  agent: social_media_content_researcher
+create_platform_specific_social_media_content:
+  description: Based on the research insights, create engaging, platform-specific
+    social media content for {company_name}. Develop content ideas, write compelling
+    captions, select appropriate hashtags, and suggest visual elements for different
+    platforms (LinkedIn, Twitter, Instagram, Facebook, TikTok). Ensure all content
+    aligns with the brand voice and leverages trending topics identified in the research
+    phase.
+  expected_output: 'A detailed content package including: 15-20 ready-to-post social
+    media content pieces with platform-specific adaptations, relevant hashtags for
+    each post, suggested posting times, content calendar recommendations, and visual/media
+    suggestions for each piece of content.'
+  agent: content_creator_and_strategist
+  context:
+  - research_trending_topics_and_competitor_content
+schedule_content_and_create_posting_calendar:
+  description: Create a comprehensive social media posting schedule and calendar for
+    {company_name}. Schedule the created content across multiple platforms at optimal
+    times, ensure proper spacing between posts, coordinate cross-platform campaigns,
+    and set up calendar events for content publishing. Consider timezone differences,
+    platform algorithms, and audience activity patterns when scheduling content.
+  expected_output: A complete social media content calendar with scheduled posting
+    times, platform-specific optimization recommendations, calendar events created
+    for each post, optimal posting time analysis, and a coordination strategy for
+    multi-platform content distribution over the next {timeframe} period.
+  agent: social_media_scheduler_and_publisher
+  context:
+  - create_platform_specific_social_media_content
+analyze_performance_and_optimize_strategy:
+  description: Analyze social media engagement metrics and performance data to identify
+    patterns, measure success, and provide recommendations for optimization. Create
+    performance dashboards, track KPIs, identify the best performing content types
+    and posting times, and suggest improvements for future content strategy. Document
+    findings and create actionable insights for ongoing optimization.
+  expected_output: A comprehensive analytics report with performance metrics, engagement
+    analysis, optimal posting time recommendations, content performance insights,
+    KPI tracking spreadsheet, and strategic recommendations for improving social media
+    performance and ROI for {company_name}.
+  agent: social_media_analytics_specialist
+  context:
+  - schedule_content_and_create_posting_calendar
